@@ -1,0 +1,7 @@
+:8080 {
+	reverse_proxy http://backend0:3000 http://backend1:3000 {
+		transport http {
+			keepalive_idle_conns_per_host 100000
+		}
+	}
+}

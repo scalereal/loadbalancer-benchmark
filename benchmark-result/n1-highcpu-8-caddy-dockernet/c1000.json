@@ -1,0 +1,48 @@
+{
+  "spec": {
+    "numberOfConnections": 1000,
+    "testType": "timed",
+    "testDurationSeconds": 30,
+    "method": "GET",
+    "url": "http://caddy:8080/io",
+    "body": "",
+    "stream": false,
+    "timeoutSeconds": 30,
+    "client": "net/http.v1"
+  },
+  "result": {
+    "bytesRead": 52905692,
+    "bytesWritten": 25103211,
+    "timeTakenSeconds": 30.293312822,
+    "req1xx": 0,
+    "req2xx": 269927,
+    "req3xx": 0,
+    "req4xx": 0,
+    "req5xx": 0,
+    "others": 0,
+    "latency": {
+      "mean": 111402.44565752964,
+      "stddev": 68090.84365114798,
+      "max": 551162,
+      "percentiles": {
+        "50": 71760,
+        "75": 175842,
+        "90": 250062,
+        "95": 275406,
+        "99": 296332
+      }
+    },
+    "rps": {
+      "mean": 8981.613035813454,
+      "stddev": 1548.1943966924346,
+      "max": 16873.928900997496,
+      "percentiles": {
+        "50": 9205.84433,
+        "75": 9747.687361,
+        "90": 10349.524957,
+        "95": 10729.721899,
+        "99": 13106.578847
+      }
+    }
+  }
+}

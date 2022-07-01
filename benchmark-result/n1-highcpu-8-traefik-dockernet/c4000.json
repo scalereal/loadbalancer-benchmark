@@ -1,0 +1,48 @@
+{
+  "spec": {
+    "numberOfConnections": 4000,
+    "testType": "timed",
+    "testDurationSeconds": 30,
+    "method": "GET",
+    "url": "http://traefik:8080/io",
+    "body": "",
+    "stream": false,
+    "timeoutSeconds": 30,
+    "client": "net/http.v1"
+  },
+  "result": {
+    "bytesRead": 46661619,
+    "bytesWritten": 24490905,
+    "timeTakenSeconds": 30.794654052,
+    "req1xx": 0,
+    "req2xx": 257799,
+    "req3xx": 0,
+    "req4xx": 0,
+    "req5xx": 0,
+    "others": 0,
+    "latency": {
+      "mean": 469082.881081773,
+      "stddev": 319088.423311665,
+      "max": 2140960,
+      "percentiles": {
+        "50": 395033,
+        "75": 638927,
+        "90": 946236,
+        "95": 1139034,
+        "99": 1447826
+      }
+    },
+    "rps": {
+      "mean": 8584.878481640519,
+      "stddev": 3801.430557954042,
+      "max": 31825.409092848087,
+      "percentiles": {
+        "50": 9182.944975,
+        "75": 11278.652288,
+        "90": 12753.255906,
+        "95": 13102.928505,
+        "99": 19331.230761
+      }
+    }
+  }
+}

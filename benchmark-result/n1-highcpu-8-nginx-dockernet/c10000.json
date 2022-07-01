@@ -1,0 +1,54 @@
+{
+  "spec": {
+    "numberOfConnections": 10000,
+    "testType": "timed",
+    "testDurationSeconds": 30,
+    "method": "GET",
+    "url": "http://nginx:8080/io",
+    "body": "",
+    "stream": false,
+    "timeoutSeconds": 30,
+    "client": "net/http.v1"
+  },
+  "result": {
+    "bytesRead": 22046720,
+    "bytesWritten": 8020785,
+    "timeTakenSeconds": 33.530417386,
+    "req1xx": 0,
+    "req2xx": 86120,
+    "req3xx": 0,
+    "req4xx": 0,
+    "req5xx": 0,
+    "others": 125,
+    "errors": [
+      {
+        "description": "Get http://nginx:8080/io: net/http: request canceled (Client.Timeout exceeded while awaiting headers)",
+        "count": 125
+      }
+    ],
+    "latency": {
+      "mean": 3565762.453985738,
+      "stddev": 1922672.6886596554,
+      "max": 30000486,
+      "percentiles": {
+        "50": 3447698,
+        "75": 4289877,
+        "90": 5260521,
+        "95": 5823463,
+        "99": 9950886
+      }
+    },
+    "rps": {
+      "mean": 2560.0441936372868,
+      "stddev": 5170.628650106351,
+      "max": 41508.420341646895,
+      "percentiles": {
+        "50": 149.875259,
+        "75": 2641.133451,
+        "90": 7893.694911,
+        "95": 13688.831283,
+        "99": 27067.798507
+      }
+    }
+  }
+}

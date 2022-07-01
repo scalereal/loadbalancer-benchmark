@@ -1,0 +1,48 @@
+{
+  "spec": {
+    "numberOfConnections": 4000,
+    "testType": "timed",
+    "testDurationSeconds": 30,
+    "method": "GET",
+    "url": "http://nginx:8080/io",
+    "body": "",
+    "stream": false,
+    "timeoutSeconds": 30,
+    "client": "net/http.v1"
+  },
+  "result": {
+    "bytesRead": 19978240,
+    "bytesWritten": 7257720,
+    "timeTakenSeconds": 30.617166765,
+    "req1xx": 0,
+    "req2xx": 78040,
+    "req3xx": 0,
+    "req4xx": 0,
+    "req5xx": 0,
+    "others": 0,
+    "latency": {
+      "mean": 1550376.7288698105,
+      "stddev": 508565.5604462871,
+      "max": 5117803,
+      "percentiles": {
+        "50": 1575335,
+        "75": 1806471,
+        "90": 2015512,
+        "95": 2167795,
+        "99": 3697287
+      }
+    },
+    "rps": {
+      "mean": 2473.6468238177977,
+      "stddev": 3609.899478831359,
+      "max": 28102.198016264287,
+      "percentiles": {
+        "50": 350.047957,
+        "75": 4144.859545,
+        "90": 6904.151812,
+        "95": 10001.997899,
+        "99": 16391.954009
+      }
+    }
+  }
+}

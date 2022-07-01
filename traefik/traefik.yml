@@ -1,8 +1,9 @@
 ## traefik.yml
-MaxIdleConnsPerHost: 100000
-
 serversTransport:
   insecureSkipVerify: true
+  MaxIdleConnsPerHost: 20000
+  forwardingTimeouts:
+    idleConnTimeout: 1s
 
 entryPoints:
   web:

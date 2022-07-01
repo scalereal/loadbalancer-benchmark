@@ -1,0 +1,62 @@
+{
+  "spec": {
+    "numberOfConnections": 4000,
+    "testType": "timed",
+    "testDurationSeconds": 30,
+    "method": "GET",
+    "url": "http://apache:8080/io",
+    "body": "",
+    "stream": false,
+    "timeoutSeconds": 30,
+    "client": "net/http.v1"
+  },
+  "result": {
+    "bytesRead": 59837049,
+    "bytesWritten": 24916016,
+    "timeTakenSeconds": 30.654227258,
+    "req1xx": 0,
+    "req2xx": 264695,
+    "req3xx": 0,
+    "req4xx": 0,
+    "req5xx": 0,
+    "others": 391,
+    "errors": [
+      {
+        "description": "Get http://apache:8080/io: EOF",
+        "count": 369
+      },
+      {
+        "description": "Get http://apache:8080/io: http: server closed idle connection",
+        "count": 21
+      },
+      {
+        "description": "Get http://apache:8080/io: read tcp 172.21.0.7:53772->172.21.0.6:8080: read: connection reset by peer",
+        "count": 1
+      }
+    ],
+    "latency": {
+      "mean": 456356.5349094256,
+      "stddev": 347521.57630942174,
+      "max": 2168802,
+      "percentiles": {
+        "50": 366076,
+        "75": 707501,
+        "90": 1019755,
+        "95": 1166872,
+        "99": 1366689
+      }
+    },
+    "rps": {
+      "mean": 8799.81646866646,
+      "stddev": 3025.2400724351646,
+      "max": 34768.59693336316,
+      "percentiles": {
+        "50": 9551.418863,
+        "75": 10770.961908,
+        "90": 11367.368202,
+        "95": 11902.267382,
+        "99": 17567.713375
+      }
+    }
+  }
+}

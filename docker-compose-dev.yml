@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   traefik:
-    image: traefik:2.1.4
+    image: traefik:latest
     ports:
       - 8080:8080
     ulimits:
@@ -15,23 +15,24 @@ services:
     links:
       - backend0
       - backend1
-  haproxy:
-    image: haproxy:2.1.2
-    ports:
-      - 8081:8080
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 100000
-        hard: 100000
-    volumes:
-      - ./haproxy:/usr/local/etc/haproxy
-      - ./haproxy/haproxy-dev.cfg:/usr/local/etc/haproxy/haproxy.cfg
-    links:
-      - backend0
-      - backend1
+
+  # haproxy:
+  #   image: haproxy:latest
+  #   ports:
+  #     - 8081:8080
+  #   ulimits:
+  #     nproc: 65535
+  #     nofile:
+  #       soft: 100000
+  #       hard: 100000
+  #   volumes:
+  #     - ./haproxy:/usr/local/etc/haproxy
+  #     - ./haproxy/haproxy-dev.cfg:/usr/local/etc/haproxy/haproxy.cfg
+  #   links:
+  #     - backend0
+  #     - backend1
   nginx:
-    image: bitnami/nginx:1.16.1
+    image: bitnami/nginx:latest
     ports:
       - 8082:8080
     ulimits:
@@ -44,19 +45,36 @@ services:
     links:
       - backend0
       - backend1
-  apache:
-    image: bitnami/apache:2.4.41
+
+  # apache:
+  #   image: bitnami/apache:latest
+  #   ports:
+  #     - 8083:8080
+  #   ulimits:
+  #     nproc: 65535
+  #     nofile:
+  #       soft: 100000
+  #       hard: 100000
+  #   volumes:
+  #     - ./apache/my_vhost-dev.conf:/opt/bitnami/apache/conf/vhosts/my_vhost.conf
+  #     - ./apache/httpd-event.conf:/opt/bitnami/apache/conf/httpd.conf
+  #     - ./apache/extra/httpd-mpm.conf:/opt/bitnami/apache/conf/extra/httpd-mpm.conf
+  #   links:
+  #     - backend0
+  #     - backend1
+
+  caddy:
+    container_name: caddy
+    image: caddy:latest
     ports:
-      - 8083:8080
+      - 8084:8080
     ulimits:
       nproc: 65535
       nofile:
         soft: 100000
         hard: 100000
     volumes:
-      - ./apache/my_vhost-dev.conf:/opt/bitnami/apache/conf/vhosts/my_vhost.conf
-      - ./apache/httpd-worker.conf:/opt/bitnami/apache/conf/httpd.conf
-      - ./apache/extra/httpd-mpm.conf:/opt/bitnami/apache/conf/extra/httpd-mpm.conf
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
     links:
       - backend0
       - backend1
